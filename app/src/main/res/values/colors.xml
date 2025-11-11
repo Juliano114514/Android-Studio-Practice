@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <resources>
-      <color name="purple_200">#FFBB86FC</color>
-      <color name="purple_500">#FF6200EE</color>
-      <color name="purple_700">#FF3700B3</color>
-      <color name="teal_200">#FF03DAC5</color>
-      <color name="teal_700">#FF018786</color>
-      <color name="black">#FF000000</color>
-      <color name="white">#FFFFFFFF</color>
-  </resources>
+<resources>
+  <color name="purple_200">#FFBB86FC</color>
+  <color name="purple_500">#FF6200EE</color>
+  <color name="purple_700">#FF3700B3</color>
+  <color name="teal_200">#FF03DAC5</color>
+  <color name="teal_700">#FF018786</color>
+  <color name="black">#FF000000</color>
+  <color name="white">#FFFFFFFF</color>
+
+    <!-- 新增：计算器专用颜色 - 提升 UI 一致性和可维护性 -->
+  <color name="calculator_background">#F5F5F5</color>
+  <color name="calculator_display_background">#FFFFFF</color>
+  <color name="calculator_display_text">#212121</color>
+  <color name="button_number_background">#FFFFFF</color>
+  <color name="button_operator_background">#FF6200EE</color>
+  <color name="button_function_background">#FF03DAC5</color>
+  <color name="button_clear_background">#FF5252</color>
+  <color name="button_text_primary">#212121</color>
+  <color name="button_text_on_primary">#FFFFFF</color>
+</resources>

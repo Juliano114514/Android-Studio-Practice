@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/calculator_background"
+  android:padding="25dp"
+  tools:context=".chapter3.CalculatorActivity">
+
+  <!-- 显示区域 - 显示当前输入和计算结果 -->
+  <!-- MaterialCardView 风格化的卡片容器 -->
+  <com.google.android.material.card.MaterialCardView
+    android:id="@+id/cardDisplay"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="24dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="5dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintVertical_bias="0.1">
+
+    <TextView
+      android:id="@+id/textDisplay"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/calculator_display_background"
+      android:fontFamily="monospace"
+      android:gravity="end|center_vertical"
+      android:minHeight="120dp"
+      android:padding="24dp"
+      android:text="@string/display_default"
+      android:textColor="@color/calculator_display_text"
+      android:textSize="48sp"
+      android:textStyle="bold"
+      tools:text="123.456" />
+  </com.google.android.material.card.MaterialCardView>
+
+  <!-- 按钮网格区域 - 使用 GridLayout 自动排列按钮 -->
+  <GridLayout
+    android:id="@+id/gridLayoutButtons"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:alignmentMode="alignMargins"
+    android:columnCount="4"
+    android:columnOrderPreserved="false"
+    android:rowCount="6"
+    android:useDefaultMargins="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/cardDisplay">
+  </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

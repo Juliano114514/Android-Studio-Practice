@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Android Studio Exam</string>
+  <string name="app_name">Android Studio Exam</string>
+
+  <!-- 计算器相关 -->
+  <string name="calculator_title">计算器</string>
+  <string name="button_clear">C</string>
+  <string name="button_clear_all">AC</string>
+  <string name="button_equals">=</string>
+  <string name="button_square_root">√</string>
+  <string name="button_power">x²</string>
+  <string name="error_divide_by_zero">除数不能为零</string>
+  <string name="error_invalid_operation">无效操作</string>
+  <string name="error_overflow">计算结果溢出</string>
+  <string name="error_negative_square_root">不能对负数开方</string>
+  <string name="display_default">0</string>
 </resources>
