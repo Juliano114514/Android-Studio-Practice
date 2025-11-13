@@ -1,10 +1,11 @@
 package com.example.androidstudioexam.chapter3.model
 
+import com.example.androidstudioexam.chapter3.model.ErrorType.*
 import java.math.BigDecimal
 import java.math.RoundingMode
 import kotlin.math.sqrt
 
-class CalculateEngine {
+class CalculatorEngine {
 
   /**
    * 计算精度 - 小数点后保留的位数
@@ -19,7 +20,7 @@ class CalculateEngine {
     return try {
       CalculatorResult.Success(a.add(b))
     } catch (e: ArithmeticException) {
-      CalculatorResult.Error("加法运算溢出")
+      CalculatorResult.Error(AddOverFlow)
     }
   }
 
@@ -27,7 +28,7 @@ class CalculateEngine {
     return try {
       CalculatorResult.Success(a.subtract(b))
     } catch (e: ArithmeticException) {
-      CalculatorResult.Error("减法运算溢出")
+      CalculatorResult.Error(SubtractOverFlow)
     }
   }
 
@@ -35,7 +36,7 @@ class CalculateEngine {
     return try {
       CalculatorResult.Success(a.multiply(b))
     } catch (e: ArithmeticException) {
-      CalculatorResult.Error("乘法运算溢出")
+      CalculatorResult.Error(MultiplyOverFlow)
     }
   }
 
@@ -43,14 +44,14 @@ class CalculateEngine {
     return try {
       // 检查除零错误
       if (b.compareTo(BigDecimal.ZERO) == 0) {
-        return CalculatorResult.Error("除数不能为零")
+        return CalculatorResult.Error(DividedByZero)
       }
       // 使用指定精度和舍入模式进行除法运算
       CalculatorResult.Success(
         a.divide(b, SCALE, ROUNDING_MODE)
       )
     } catch (e: ArithmeticException) {
-      CalculatorResult.Error("除法运算错误")
+      CalculatorResult.Error(SyntaxError)
     }
   }
 
@@ -58,7 +59,7 @@ class CalculateEngine {
     return try {
       // 检查负数开方
       if (value.compareTo(BigDecimal.ZERO) < 0) {
-        return CalculatorResult.Error("不能对负数开方")
+        return CalculatorResult.Error(NegativeSqrt)
       }
       // 使用 Kotlin 标准库的 sqrt 函数，然后转换为 BigDecimal
       val result = sqrt(value.toDouble())
@@ -66,7 +67,7 @@ class CalculateEngine {
         BigDecimal(result).setScale(SCALE, ROUNDING_MODE)
       )
     } catch (e: ArithmeticException) {
-      CalculatorResult.Error("开方运算错误")
+      CalculatorResult.Error(SyntaxError)
     }
   }
 
@@ -75,7 +76,7 @@ class CalculateEngine {
       // 使用 multiply 实现平方运算
       CalculatorResult.Success(value.multiply(value))
     } catch (e: ArithmeticException) {
-      CalculatorResult.Error("乘方运算溢出")
+      CalculatorResult.Error(PowerOverFlow)
     }
   }
 
@@ -88,5 +89,4 @@ class CalculateEngine {
     }
     return formatted
   }
-
 }

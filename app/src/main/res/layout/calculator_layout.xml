@@ -48,7 +48,7 @@
     android:alignmentMode="alignMargins"
     android:columnCount="4"
     android:columnOrderPreserved="false"
-    android:rowCount="6"
+    android:rowCount="5"
     android:useDefaultMargins="true"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"

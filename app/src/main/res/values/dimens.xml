@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 计算器按钮最小高度，确保触摸区域足够大 -->
+    <dimen name="button_min_height">64dp</dimen>
+</resources>
+

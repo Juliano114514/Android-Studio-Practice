@@ -11,6 +11,9 @@
   <string name="error_divide_by_zero">除数不能为零</string>
   <string name="error_invalid_operation">无效操作</string>
   <string name="error_overflow">计算结果溢出</string>
+  <string name="error_add_overflow">加法运算溢出</string>
+  <string name="error_subtract_overflow">减法运算溢出</string>
+  <string name="error_multiply_overflow">乘法运算溢出</string>
   <string name="error_negative_square_root">不能对负数开方</string>
   <string name="display_default">0</string>
 </resources>

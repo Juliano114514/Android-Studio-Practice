@@ -2,15 +2,15 @@ package com.example.androidstudioexam.chapter3.model
 
 import java.math.BigDecimal
 
-const val KEYBOARD_ROW = 4
-const val KEYBOARD_COLUMN = 6
+const val KEYBOARD_ROW = 5
+const val KEYBOARD_COLUMN = 4
 
 /**
  * 计算结果密封类
  */
 sealed class CalculatorResult {
   data class Success(val value: BigDecimal) : CalculatorResult()
-  data class Error(val errorMessage: String) : CalculatorResult()
+  data class Error(val error: ErrorType) : CalculatorResult()
 }
 
 /**
@@ -18,10 +18,19 @@ sealed class CalculatorResult {
  */
 sealed class CalculatorState {
   data class Display(val value: String) : CalculatorState()
-  data class Error(val message: String) : CalculatorState()
+  data class Error(val error: ErrorType) : CalculatorState()
   object Clear : CalculatorState()  // 单例清除，可以全局只用一个（rbq这一块）
 }
 
+sealed class ErrorType {
+  object AddOverFlow: ErrorType()
+  object SubtractOverFlow: ErrorType()
+  object MultiplyOverFlow: ErrorType()
+  object DividedByZero: ErrorType()
+  object NegativeSqrt: ErrorType()
+  object PowerOverFlow: ErrorType()
+  object SyntaxError: ErrorType()
+}
 
 /**
  * 按钮类型枚举
